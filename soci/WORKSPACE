@@ -1,0 +1,21 @@
+git_repository(
+    name   = "com_github_gflags_gflags",
+    commit = "8935ef4526a1006e0e0e3a809da19630eb1f77f8",
+    remote = "https://github.com/gflags/gflags.git",
+)
+
+bind(
+    name = "gflags",
+    actual = "@com_github_gflags_gflags//:gflags",
+)
+
+git_repository (
+  name = "github_nathanws_bazel_soci",
+  commit = "aa0f4a7d1059d798b4c5407d94c4d1ac004f7d3e",
+  remote = "https://github.com/nathanws/bazel_soci",
+)
+
+bind (
+  name = "soci-sqlite3",
+  actual = "@github_nathanws_bazel_soci//:sqlite3",
+)

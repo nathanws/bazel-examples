@@ -1,0 +1,27 @@
+git_repository(
+    name   = "com_github_gflags_gflags",
+    commit = "8935ef4526a1006e0e0e3a809da19630eb1f77f8",
+    remote = "https://github.com/gflags/gflags.git",
+)
+
+bind(
+    name = "gflags",
+    actual = "@com_github_gflags_gflags//:gflags",
+)
+
+bind(
+    name = "gflags_nothreads",
+    actual = "@com_github_gflags_gflags//:gflags_nothreads",
+)
+
+new_git_repository (
+  name = "github_nlohmann_json",
+  remote = "https://github.com/nlohmann/json.git",
+  tag = "v2.0.10",
+  build_file = "json.BUILD",
+)
+
+bind (
+  name = "json",
+  actual = "@github_nlohmann_json//:main",
+)
